@@ -65,6 +65,7 @@ namespace Testing
 
             // assert
             Assert.IsFalse(isSaved);
+            Assert.IsFalse(File.Exists(outputPath));
         }
 
         [TestMethod]
@@ -81,6 +82,7 @@ namespace Testing
             // assert
             Assert.IsFalse(csvEmpty.SaveToHtml(outputPath));
             Assert.IsFalse(csvNull.SaveToHtml(outputPath));
+            Assert.IsFalse(File.Exists(outputPath));
         }
     }
 }
