@@ -4,11 +4,11 @@ using System.Text;
 
 namespace MyLib
 {
-    public class Csv
+    public class CsvToHtml
     {
         private List<List<string>> data_;
 
-        public Csv(List<List<string>> data)
+        public CsvToHtml(List<List<string>> data)
         {
             data_ = data;
         }

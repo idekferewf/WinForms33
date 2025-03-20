@@ -23,7 +23,7 @@ namespace Testing
                 new List<string>() { "Кирилл", "15" },
             };
 
-            Csv csv = new Csv(data);
+            CsvToHtml csv = new CsvToHtml(data);
             bool isSaved = csv.SaveToHtml(outputPath);
 
             // assert (is saved)
@@ -60,7 +60,7 @@ namespace Testing
                 new List<string>() { "Артём", "18" },
             };
 
-            Csv csv = new Csv(data);
+            CsvToHtml csv = new CsvToHtml(data);
             bool isSaved = csv.SaveToHtml(outputPath);
 
             // assert
@@ -76,8 +76,8 @@ namespace Testing
             List<List<string>> emptyData = new List<List<string>>();
             List<List<string>> nullData = null;
 
-            Csv csvEmpty = new Csv(emptyData);
-            Csv csvNull = new Csv(nullData);
+            CsvToHtml csvEmpty = new CsvToHtml(emptyData);
+            CsvToHtml csvNull = new CsvToHtml(nullData);
 
             // assert
             Assert.IsFalse(csvEmpty.SaveToHtml(outputPath));
