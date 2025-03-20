@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -7,7 +6,7 @@ namespace MyLib
 {
     public class Csv
     {
-        List<List<string>> data_ { get; set; }
+        private List<List<string>> data_;
 
         public Csv(List<List<string>> data)
         {
