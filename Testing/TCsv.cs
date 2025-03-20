@@ -66,5 +66,21 @@ namespace Testing
             // assert
             Assert.IsFalse(isSaved);
         }
+
+        [TestMethod]
+        public void TSaveToHtmlWithInvalidData()
+        {
+            // init
+            string outputPath = "data.html";
+            List<List<string>> emptyData = new List<List<string>>();
+            List<List<string>> nullData = null;
+
+            Csv csvEmpty = new Csv(emptyData);
+            Csv csvNull = new Csv(nullData);
+
+            // assert
+            Assert.IsFalse(csvEmpty.SaveToHtml(outputPath));
+            Assert.IsFalse(csvNull.SaveToHtml(outputPath));
+        }
     }
 }
