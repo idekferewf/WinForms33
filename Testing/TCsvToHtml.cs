@@ -8,7 +8,7 @@ using MyLib;
 namespace Testing
 {
     [TestClass]
-    public class TCsv
+    public class TCsvToHtml
     {
         [TestMethod]
         public void TSaveToHtml()
@@ -72,7 +72,7 @@ namespace Testing
         public void TSaveToHtmlWithInvalidData()
         {
             // init
-            string outputPath = "data.html";
+            string outputPath = "invalid.html";
             List<List<string>> emptyData = new List<List<string>>();
             List<List<string>> nullData = null;
 
