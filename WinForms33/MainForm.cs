@@ -50,7 +50,7 @@ namespace WinForms33
         private void convertToHtmlToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // сохраняем данные
-            Csv csv = new Csv(csvData);
+            CsvToHtml csv = new CsvToHtml(csvData);
             if (saveHtmlFileDialog.ShowDialog() == DialogResult.OK)
             {
                 // получаем путь до сохранения
