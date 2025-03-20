@@ -47,5 +47,24 @@ namespace Testing
             // assert (html)
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        [DataRow("..\\invalid\\")]
+        [DataRow("C:\\Windows\\System32\\data.html")]
+        public void TSaveToHtmlWithInvalidPath(string outputPath)
+        {
+            // init
+            List<List<string>> data = new List<List<string>>()
+            {
+                new List<string>() { "Имя", "Возраст" },
+                new List<string>() { "Артём", "18" },
+            };
+
+            Csv csv = new Csv(data);
+            bool isSaved = csv.SaveToHtml(outputPath);
+
+            // assert
+            Assert.IsFalse(isSaved);
+        }
     }
 }
