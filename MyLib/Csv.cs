@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -33,7 +34,7 @@ namespace MyLib
             html += "</tr></thead>";
 
             // добавляем данные
-            html += "</tbody>";
+            html += "<tbody>";
             for (int i = 1; i < data_.Count; i++)
             {
                 html += "<tr>";
