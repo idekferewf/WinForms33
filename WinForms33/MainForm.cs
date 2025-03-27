@@ -24,9 +24,9 @@ namespace WinForms33
 
                 // получаем данные
                 CsvLoader csvLoader = new CsvLoader();
-                bool isLoaded = csvLoader.LoadFromCsv(filePath);
+                string haveErrors = csvLoader.LoadFromCsv(filePath);
                
-                if (isLoaded)
+                if (string.IsNullOrWhiteSpace(haveErrors))
                 {
                     // сохраняем результат
                     csvData = csvLoader.csvData;
