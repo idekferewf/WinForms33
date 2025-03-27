@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -10,20 +9,20 @@ namespace Testing
 	[TestClass]
 	public class TCsvLoader
 	{
-		[TestMethod]
-		public void TLoadFromCsv()
-		{
-			// init
-			string filePath = "data.csv";
-			string csvFile = "Имя,Возраст\nАртём,12\nАлексей,19\nДаниил,20\nИлья,16";
+        [TestMethod]
+        public void TLoadFromCsv()
+        {
+            // init
+            string filePath = "data.csv";
+            string csvFile = "Имя,Возраст\nАртём,12\nАлексей,19\nДаниил,20\nИлья,16";
             File.WriteAllText(filePath, csvFile, Encoding.UTF8);
 
-			CsvLoader csvLoader = new CsvLoader();
-            bool isLoaded = csvLoader.LoadFromCsv(filePath);
-            Assert.IsTrue(isLoaded);
+            CsvLoader csvLoader = new CsvLoader();
+            string haveErrors = csvLoader.LoadFromCsv(filePath);
+            Assert.IsTrue(string.IsNullOrWhiteSpace(haveErrors));
 
             // actual
-			List<List<string>> actual = csvLoader.csvData;
+            List<List<string>> actual = csvLoader.csvData;
 
             // expected
             List<List<string>> expected = new List<List<string>>()
@@ -36,7 +35,11 @@ namespace Testing
             };
 
             // assert
-            CollectionAssert.AreEqual(expected, actual);
+            Assert.AreEqual(expected.Count, actual.Count);
+            for (int i = 0; i < actual.Count; i++)
+            {
+                CollectionAssert.AreEqual(expected[i], actual[i]);
+            }
         }
 	}
 }
