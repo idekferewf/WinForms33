@@ -13,12 +13,17 @@ namespace MyLib
             data_ = data;
         }
 
-        public bool SaveToHtml(string outputPath)
+        public string SaveToHtml(string outputPath)
         {
             // проверяем на существование данных
             if (data_ == null || data_.Count == 0)
             {
-                return false;
+                return "Данные отсутствуют.";
+            }
+
+            if (!File.Exists(outputPath))
+            {
+                return "Выходного файла не существует.";
             }
 
             // начало html
@@ -54,9 +59,10 @@ namespace MyLib
                 File.WriteAllText(outputPath, html, Encoding.UTF8);
             } catch
             {
-                return false;
+                return "Сохранить не удалось. Пожалуйста, проверьте права на сохранение в указанную папку.";
             }
-            return true;
+
+            return "";
         }
     }
 }

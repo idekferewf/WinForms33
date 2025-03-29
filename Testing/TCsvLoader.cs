@@ -18,8 +18,8 @@ namespace Testing
             File.WriteAllText(filePath, csvFile, Encoding.UTF8);
 
             CsvLoader csvLoader = new CsvLoader();
-            string haveErrors = csvLoader.LoadFromCsv(filePath);
-            Assert.IsTrue(string.IsNullOrWhiteSpace(haveErrors));
+            string errors = csvLoader.LoadFromCsv(filePath);
+            Assert.IsTrue(string.IsNullOrWhiteSpace(errors));
 
             // actual
             List<List<string>> actual = csvLoader.csvData;

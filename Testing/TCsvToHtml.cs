@@ -24,10 +24,10 @@ namespace Testing
             };
 
             CsvToHtml csv = new CsvToHtml(data);
-            bool isSaved = csv.SaveToHtml(outputPath);
+            string errors = csv.SaveToHtml(outputPath);
 
             // assert (is saved)
-            Assert.IsTrue(isSaved);
+            Assert.IsTrue(string.IsNullOrWhiteSpace(errors));
 
             // actual
             string actual = File.ReadAllText(outputPath, Encoding.UTF8);
@@ -61,10 +61,10 @@ namespace Testing
             };
 
             CsvToHtml csv = new CsvToHtml(data);
-            bool isSaved = csv.SaveToHtml(outputPath);
+            string errors = csv.SaveToHtml(outputPath);
 
             // assert
-            Assert.IsFalse(isSaved);
+            Assert.IsFalse(string.IsNullOrWhiteSpace(errors));
             Assert.IsFalse(File.Exists(outputPath));
         }
 
@@ -80,8 +80,8 @@ namespace Testing
             CsvToHtml csvNull = new CsvToHtml(nullData);
 
             // assert
-            Assert.IsFalse(csvEmpty.SaveToHtml(outputPath));
-            Assert.IsFalse(csvNull.SaveToHtml(outputPath));
+            Assert.IsFalse(string.IsNullOrWhiteSpace(csvEmpty.SaveToHtml(outputPath)));
+            Assert.IsFalse(string.IsNullOrWhiteSpace(csvNull.SaveToHtml(outputPath)));
             Assert.IsFalse(File.Exists(outputPath));
         }
     }
