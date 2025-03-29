@@ -24,9 +24,9 @@ namespace WinForms33
 
                 // получаем данные
                 CsvLoader csvLoader = new CsvLoader();
-                string haveErrors = csvLoader.LoadFromCsv(filePath);
+                string errors = csvLoader.LoadFromCsv(filePath);
                
-                if (string.IsNullOrWhiteSpace(haveErrors))
+                if (string.IsNullOrWhiteSpace(errors))
                 {
                     // сохраняем результат
                     csvData = csvLoader.csvData;
@@ -42,7 +42,8 @@ namespace WinForms33
                     convertToHtmlToolStripMenuItem.Enabled = false;
 
                     // выводим сообщение об ошибке
-                    MessageBox.Show("Загрузить данные не удалось.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    errorsPanel.Visible = true;
+                    errorsTextBox.Text = errors;
                 }
             }
         }
@@ -66,9 +67,15 @@ namespace WinForms33
                 }
                 else
                 {
-                    MessageBox.Show("Сохранить данные не удалось.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    errorsPanel.Visible = true;
+                    errorsTextBox.Text = "Сохранить данные не удалось.";
                 }
             }
+        }
+
+        private void hideErrorsButton_Click(object sender, EventArgs e)
+        {
+            errorsPanel.Visible = false;
         }
     }
 }
