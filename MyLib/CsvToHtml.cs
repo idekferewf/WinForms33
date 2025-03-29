@@ -21,11 +21,6 @@ namespace MyLib
                 return "Данные отсутствуют.";
             }
 
-            if (!File.Exists(outputPath))
-            {
-                return "Выходного файла не существует.";
-            }
-
             // начало html
             string html = "<!DOCTYPE html><html><head><title>CSVData</title></head><body><table>";
 
@@ -59,7 +54,7 @@ namespace MyLib
                 File.WriteAllText(outputPath, html, Encoding.UTF8);
             } catch
             {
-                return "Сохранить не удалось. Пожалуйста, проверьте права на сохранение в указанную папку.";
+                return "Сохранить не удалось. Пожалуйста, проверьте наличие выходного файла или права на сохранение в указанную папку.";
             }
 
             return "";

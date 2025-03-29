@@ -125,10 +125,10 @@
             // 
             // hideErrorsButton
             // 
-            this.hideErrorsButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.hideErrorsButton.Location = new System.Drawing.Point(347, 0);
+            this.hideErrorsButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.hideErrorsButton.Location = new System.Drawing.Point(344, 4);
             this.hideErrorsButton.Name = "hideErrorsButton";
-            this.hideErrorsButton.Size = new System.Drawing.Size(81, 30);
+            this.hideErrorsButton.Size = new System.Drawing.Size(81, 23);
             this.hideErrorsButton.TabIndex = 3;
             this.hideErrorsButton.Text = "Скрыть";
             this.hideErrorsButton.UseVisualStyleBackColor = true;

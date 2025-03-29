@@ -58,9 +58,9 @@ namespace WinForms33
                 string filePath = saveHtmlFileDialog.FileName;
 
                 // сохраняем файл
-                bool isSaved = csv.SaveToHtml(filePath);
+                string errors = csv.SaveToHtml(filePath);
 
-                if (isSaved)
+                if (string.IsNullOrWhiteSpace(errors))
                 {
                     // выводим сообщение об успехе
                     MessageBox.Show($"Файл успешно сохранен! Путь до файла: {filePath}", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -68,7 +68,7 @@ namespace WinForms33
                 else
                 {
                     errorsPanel.Visible = true;
-                    errorsTextBox.Text = "Сохранить данные не удалось.";
+                    errorsTextBox.Text = errors;
                 }
             }
         }
