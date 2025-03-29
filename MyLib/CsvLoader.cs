@@ -17,7 +17,7 @@ namespace MyLib
                 lines = File.ReadAllLines(filePath);
             } catch
             {
-                return "Файла не существует.";
+                return "Файл не существует.";
             }
 
             if (lines.Length == 0)
@@ -66,7 +66,7 @@ namespace MyLib
 
             if (lines.Length < 2)
             {
-                return "Данные отсутствует.";
+                return "Данные отсутствуют.";
             }
 
             return "";
