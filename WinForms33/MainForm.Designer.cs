@@ -38,8 +38,10 @@
             this.errorsLabel = new System.Windows.Forms.Label();
             this.errorsPanel = new System.Windows.Forms.Panel();
             this.hideErrorsButton = new System.Windows.Forms.Button();
+            this.csvGridView = new System.Windows.Forms.DataGridView();
             this.mainMenuStrip.SuspendLayout();
             this.errorsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.csvGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // mainMenuStrip
@@ -48,7 +50,7 @@
             this.файлToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Size = new System.Drawing.Size(428, 24);
+            this.mainMenuStrip.Size = new System.Drawing.Size(572, 24);
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "menuStrip1";
             // 
@@ -97,7 +99,7 @@
             this.errorsTextBox.Margin = new System.Windows.Forms.Padding(8);
             this.errorsTextBox.Name = "errorsTextBox";
             this.errorsTextBox.ReadOnly = true;
-            this.errorsTextBox.Size = new System.Drawing.Size(428, 106);
+            this.errorsTextBox.Size = new System.Drawing.Size(572, 106);
             this.errorsTextBox.TabIndex = 1;
             this.errorsTextBox.Text = "";
             // 
@@ -117,16 +119,16 @@
             this.errorsPanel.Controls.Add(this.errorsLabel);
             this.errorsPanel.Controls.Add(this.errorsTextBox);
             this.errorsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.errorsPanel.Location = new System.Drawing.Point(0, 132);
+            this.errorsPanel.Location = new System.Drawing.Point(0, 283);
             this.errorsPanel.Name = "errorsPanel";
-            this.errorsPanel.Size = new System.Drawing.Size(428, 136);
+            this.errorsPanel.Size = new System.Drawing.Size(572, 136);
             this.errorsPanel.TabIndex = 3;
             this.errorsPanel.Visible = false;
             // 
             // hideErrorsButton
             // 
             this.hideErrorsButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.hideErrorsButton.Location = new System.Drawing.Point(344, 4);
+            this.hideErrorsButton.Location = new System.Drawing.Point(488, 4);
             this.hideErrorsButton.Name = "hideErrorsButton";
             this.hideErrorsButton.Size = new System.Drawing.Size(81, 23);
             this.hideErrorsButton.TabIndex = 3;
@@ -134,11 +136,21 @@
             this.hideErrorsButton.UseVisualStyleBackColor = true;
             this.hideErrorsButton.Click += new System.EventHandler(this.hideErrorsButton_Click);
             // 
+            // csvGridView
+            // 
+            this.csvGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.csvGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.csvGridView.Location = new System.Drawing.Point(0, 24);
+            this.csvGridView.Name = "csvGridView";
+            this.csvGridView.Size = new System.Drawing.Size(572, 259);
+            this.csvGridView.TabIndex = 4;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 268);
+            this.ClientSize = new System.Drawing.Size(572, 419);
+            this.Controls.Add(this.csvGridView);
             this.Controls.Add(this.errorsPanel);
             this.Controls.Add(this.mainMenuStrip);
             this.MainMenuStrip = this.mainMenuStrip;
@@ -149,6 +161,7 @@
             this.mainMenuStrip.PerformLayout();
             this.errorsPanel.ResumeLayout(false);
             this.errorsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.csvGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,6 +179,7 @@
         private System.Windows.Forms.Label errorsLabel;
         private System.Windows.Forms.Panel errorsPanel;
         private System.Windows.Forms.Button hideErrorsButton;
+        private System.Windows.Forms.DataGridView csvGridView;
     }
 }
 
