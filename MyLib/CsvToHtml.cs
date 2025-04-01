@@ -16,7 +16,7 @@ namespace MyLib
         public string SaveToHtml(string outputPath)
         {
             // проверяем на существование данных
-            if (data_ == null || data_.Count == 0)
+            if (data_ == null || data_.Count < 2)
             {
                 return "Данные отсутствуют.";
             }
