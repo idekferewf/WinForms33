@@ -38,10 +38,16 @@
             this.errorsLabel = new System.Windows.Forms.Label();
             this.errorsPanel = new System.Windows.Forms.Panel();
             this.hideErrorsButton = new System.Windows.Forms.Button();
+            this.toolsPanel = new System.Windows.Forms.Panel();
             this.csvGridView = new System.Windows.Forms.DataGridView();
+            this.themeGroupBox = new System.Windows.Forms.GroupBox();
+            this.lightThemeRadioButton = new System.Windows.Forms.RadioButton();
+            this.darkThemeRadioButton = new System.Windows.Forms.RadioButton();
             this.mainMenuStrip.SuspendLayout();
             this.errorsPanel.SuspendLayout();
+            this.toolsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csvGridView)).BeginInit();
+            this.themeGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenuStrip
@@ -50,7 +56,7 @@
             this.файлToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Size = new System.Drawing.Size(572, 24);
+            this.mainMenuStrip.Size = new System.Drawing.Size(616, 24);
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "menuStrip1";
             // 
@@ -95,11 +101,11 @@
             this.errorsTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.errorsTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.errorsTextBox.ForeColor = System.Drawing.Color.IndianRed;
-            this.errorsTextBox.Location = new System.Drawing.Point(0, 30);
+            this.errorsTextBox.Location = new System.Drawing.Point(0, 28);
             this.errorsTextBox.Margin = new System.Windows.Forms.Padding(8);
             this.errorsTextBox.Name = "errorsTextBox";
             this.errorsTextBox.ReadOnly = true;
-            this.errorsTextBox.Size = new System.Drawing.Size(572, 106);
+            this.errorsTextBox.Size = new System.Drawing.Size(614, 106);
             this.errorsTextBox.TabIndex = 1;
             this.errorsTextBox.Text = "";
             // 
@@ -115,20 +121,22 @@
             // 
             // errorsPanel
             // 
+            this.errorsPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.errorsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.errorsPanel.Controls.Add(this.hideErrorsButton);
             this.errorsPanel.Controls.Add(this.errorsLabel);
             this.errorsPanel.Controls.Add(this.errorsTextBox);
             this.errorsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.errorsPanel.Location = new System.Drawing.Point(0, 283);
+            this.errorsPanel.Location = new System.Drawing.Point(0, 360);
             this.errorsPanel.Name = "errorsPanel";
-            this.errorsPanel.Size = new System.Drawing.Size(572, 136);
+            this.errorsPanel.Size = new System.Drawing.Size(616, 136);
             this.errorsPanel.TabIndex = 3;
             this.errorsPanel.Visible = false;
             // 
             // hideErrorsButton
             // 
             this.hideErrorsButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.hideErrorsButton.Location = new System.Drawing.Point(488, 4);
+            this.hideErrorsButton.Location = new System.Drawing.Point(530, 3);
             this.hideErrorsButton.Name = "hideErrorsButton";
             this.hideErrorsButton.Size = new System.Drawing.Size(81, 23);
             this.hideErrorsButton.TabIndex = 3;
@@ -136,21 +144,66 @@
             this.hideErrorsButton.UseVisualStyleBackColor = true;
             this.hideErrorsButton.Click += new System.EventHandler(this.hideErrorsButton_Click);
             // 
+            // toolsPanel
+            // 
+            this.toolsPanel.Controls.Add(this.themeGroupBox);
+            this.toolsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolsPanel.Location = new System.Drawing.Point(0, 292);
+            this.toolsPanel.Name = "toolsPanel";
+            this.toolsPanel.Size = new System.Drawing.Size(616, 68);
+            this.toolsPanel.TabIndex = 5;
+            // 
             // csvGridView
             // 
+            this.csvGridView.AllowUserToAddRows = false;
+            this.csvGridView.AllowUserToDeleteRows = false;
             this.csvGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.csvGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.csvGridView.Location = new System.Drawing.Point(0, 24);
             this.csvGridView.Name = "csvGridView";
-            this.csvGridView.Size = new System.Drawing.Size(572, 259);
-            this.csvGridView.TabIndex = 4;
+            this.csvGridView.Size = new System.Drawing.Size(616, 268);
+            this.csvGridView.TabIndex = 0;
+            // 
+            // themeGroupBox
+            // 
+            this.themeGroupBox.Controls.Add(this.darkThemeRadioButton);
+            this.themeGroupBox.Controls.Add(this.lightThemeRadioButton);
+            this.themeGroupBox.Location = new System.Drawing.Point(8, 7);
+            this.themeGroupBox.Name = "themeGroupBox";
+            this.themeGroupBox.Size = new System.Drawing.Size(213, 55);
+            this.themeGroupBox.TabIndex = 0;
+            this.themeGroupBox.TabStop = false;
+            this.themeGroupBox.Text = "Выберите тему";
+            // 
+            // lightThemeRadioButton
+            // 
+            this.lightThemeRadioButton.AutoSize = true;
+            this.lightThemeRadioButton.Location = new System.Drawing.Point(9, 23);
+            this.lightThemeRadioButton.Name = "lightThemeRadioButton";
+            this.lightThemeRadioButton.Size = new System.Drawing.Size(95, 17);
+            this.lightThemeRadioButton.TabIndex = 0;
+            this.lightThemeRadioButton.TabStop = true;
+            this.lightThemeRadioButton.Text = "Светлая тема";
+            this.lightThemeRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // darkThemeRadioButton
+            // 
+            this.darkThemeRadioButton.AutoSize = true;
+            this.darkThemeRadioButton.Location = new System.Drawing.Point(110, 23);
+            this.darkThemeRadioButton.Name = "darkThemeRadioButton";
+            this.darkThemeRadioButton.Size = new System.Drawing.Size(92, 17);
+            this.darkThemeRadioButton.TabIndex = 1;
+            this.darkThemeRadioButton.TabStop = true;
+            this.darkThemeRadioButton.Text = "Тёмная тема";
+            this.darkThemeRadioButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 419);
+            this.ClientSize = new System.Drawing.Size(616, 496);
             this.Controls.Add(this.csvGridView);
+            this.Controls.Add(this.toolsPanel);
             this.Controls.Add(this.errorsPanel);
             this.Controls.Add(this.mainMenuStrip);
             this.MainMenuStrip = this.mainMenuStrip;
@@ -161,7 +214,10 @@
             this.mainMenuStrip.PerformLayout();
             this.errorsPanel.ResumeLayout(false);
             this.errorsPanel.PerformLayout();
+            this.toolsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.csvGridView)).EndInit();
+            this.themeGroupBox.ResumeLayout(false);
+            this.themeGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +235,11 @@
         private System.Windows.Forms.Label errorsLabel;
         private System.Windows.Forms.Panel errorsPanel;
         private System.Windows.Forms.Button hideErrorsButton;
+        private System.Windows.Forms.Panel toolsPanel;
         private System.Windows.Forms.DataGridView csvGridView;
+        private System.Windows.Forms.GroupBox themeGroupBox;
+        private System.Windows.Forms.RadioButton darkThemeRadioButton;
+        private System.Windows.Forms.RadioButton lightThemeRadioButton;
     }
 }
 
