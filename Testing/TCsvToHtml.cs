@@ -24,7 +24,7 @@ namespace Testing
             };
 
             CsvToHtml csv = new CsvToHtml(data);
-            string errors = csv.SaveToHtml(outputPath);
+            string errors = csv.SaveToHtml(outputPath, "Arial", "Без темы");
 
             // assert (is saved)
             Assert.IsTrue(string.IsNullOrWhiteSpace(errors));
@@ -33,16 +33,16 @@ namespace Testing
             string actual = File.ReadAllText(outputPath, Encoding.UTF8);
 
             // expected
-            string expected = "<!DOCTYPE html><html><head>" +
+            string expected = "<html><head>" +
                 "<title>CSVData</title>" +
-                "</head>" +
-                "<body><table><thead>" +
+                "<meta name='viewport' content='width=device-width, initial-scale=1.0'/><style></style></head>" +
+                "<body><div class='table-wrapper'><table style='font-family:Arial'><thead>" +
                 "<tr><th>Имя</th><th>Возраст</th></tr>" +
                 "</thead><tbody>" +
                 "<tr><td>Артём</td><td>18</td></tr>" +
                 "<tr><td>Григорий</td><td>17</td></tr>" +
                 "<tr><td>Кирилл</td><td>15</td></tr>" +
-                "</tbody></table></tbody></html>";
+                "</tbody></table></div></body></html>";
 
             // assert (html)
             Assert.AreEqual(expected, actual);
@@ -61,7 +61,7 @@ namespace Testing
             };
 
             CsvToHtml csv = new CsvToHtml(data);
-            string errors = csv.SaveToHtml(outputPath);
+            string errors = csv.SaveToHtml(outputPath, "Arial", "Без темы");
 
             // assert
             Assert.IsFalse(string.IsNullOrWhiteSpace(errors));
@@ -80,8 +80,8 @@ namespace Testing
             CsvToHtml csvNull = new CsvToHtml(nullData);
 
             // assert
-            Assert.IsFalse(string.IsNullOrWhiteSpace(csvEmpty.SaveToHtml(outputPath)));
-            Assert.IsFalse(string.IsNullOrWhiteSpace(csvNull.SaveToHtml(outputPath)));
+            Assert.IsFalse(string.IsNullOrWhiteSpace(csvEmpty.SaveToHtml(outputPath, "Arial", "Без темы")));
+            Assert.IsFalse(string.IsNullOrWhiteSpace(csvNull.SaveToHtml(outputPath, "Arial", "Без темы")));
             Assert.IsFalse(File.Exists(outputPath));
         }
     }
