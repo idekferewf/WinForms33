@@ -49,6 +49,7 @@
             this.lightThemeRadioButton = new System.Windows.Forms.RadioButton();
             this.csvGridView = new System.Windows.Forms.DataGridView();
             this.noThemeRadioButton = new System.Windows.Forms.RadioButton();
+            this.previewButton = new System.Windows.Forms.Button();
             this.mainMenuStrip.SuspendLayout();
             this.errorsPanel.SuspendLayout();
             this.toolsPanel.SuspendLayout();
@@ -63,7 +64,7 @@
             this.файлToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Size = new System.Drawing.Size(644, 24);
+            this.mainMenuStrip.Size = new System.Drawing.Size(782, 24);
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "menuStrip1";
             // 
@@ -112,7 +113,7 @@
             this.errorsTextBox.Margin = new System.Windows.Forms.Padding(8);
             this.errorsTextBox.Name = "errorsTextBox";
             this.errorsTextBox.ReadOnly = true;
-            this.errorsTextBox.Size = new System.Drawing.Size(642, 106);
+            this.errorsTextBox.Size = new System.Drawing.Size(780, 106);
             this.errorsTextBox.TabIndex = 1;
             this.errorsTextBox.Text = "";
             // 
@@ -136,14 +137,14 @@
             this.errorsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.errorsPanel.Location = new System.Drawing.Point(0, 371);
             this.errorsPanel.Name = "errorsPanel";
-            this.errorsPanel.Size = new System.Drawing.Size(644, 136);
+            this.errorsPanel.Size = new System.Drawing.Size(782, 136);
             this.errorsPanel.TabIndex = 3;
             this.errorsPanel.Visible = false;
             // 
             // hideErrorsButton
             // 
             this.hideErrorsButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.hideErrorsButton.Location = new System.Drawing.Point(558, 3);
+            this.hideErrorsButton.Location = new System.Drawing.Point(694, 3);
             this.hideErrorsButton.Name = "hideErrorsButton";
             this.hideErrorsButton.Size = new System.Drawing.Size(81, 23);
             this.hideErrorsButton.TabIndex = 3;
@@ -153,13 +154,14 @@
             // 
             // toolsPanel
             // 
+            this.toolsPanel.Controls.Add(this.previewButton);
             this.toolsPanel.Controls.Add(this.noThemeRadioButton);
             this.toolsPanel.Controls.Add(this.fontGroupBox);
             this.toolsPanel.Controls.Add(this.themeGroupBox);
             this.toolsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolsPanel.Location = new System.Drawing.Point(0, 303);
             this.toolsPanel.Name = "toolsPanel";
-            this.toolsPanel.Size = new System.Drawing.Size(644, 68);
+            this.toolsPanel.Size = new System.Drawing.Size(782, 68);
             this.toolsPanel.TabIndex = 5;
             // 
             // fontGroupBox
@@ -262,7 +264,7 @@
             this.csvGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.csvGridView.Location = new System.Drawing.Point(0, 24);
             this.csvGridView.Name = "csvGridView";
-            this.csvGridView.Size = new System.Drawing.Size(644, 279);
+            this.csvGridView.Size = new System.Drawing.Size(782, 279);
             this.csvGridView.TabIndex = 0;
             // 
             // noThemeRadioButton
@@ -276,11 +278,21 @@
             this.noThemeRadioButton.Text = "Без темы";
             this.noThemeRadioButton.UseVisualStyleBackColor = true;
             // 
+            // previewButton
+            // 
+            this.previewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.previewButton.Location = new System.Drawing.Point(622, 7);
+            this.previewButton.Name = "previewButton";
+            this.previewButton.Size = new System.Drawing.Size(154, 54);
+            this.previewButton.TabIndex = 4;
+            this.previewButton.Text = "Предпросмотр";
+            this.previewButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 507);
+            this.ClientSize = new System.Drawing.Size(782, 507);
             this.Controls.Add(this.csvGridView);
             this.Controls.Add(this.toolsPanel);
             this.Controls.Add(this.errorsPanel);
@@ -328,6 +340,7 @@
         private System.Windows.Forms.RadioButton arialFontRadioButton;
         private System.Windows.Forms.RadioButton greenThemeRadioButton;
         private System.Windows.Forms.RadioButton noThemeRadioButton;
+        private System.Windows.Forms.Button previewButton;
     }
 }
 
