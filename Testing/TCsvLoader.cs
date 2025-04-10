@@ -41,5 +41,23 @@ namespace Testing
                 CollectionAssert.AreEqual(expected[i], actual[i]);
             }
         }
-	}
+
+        [TestMethod]
+        [DataRow("Имя,Возраст\n", "Данные отсутствуют.")]
+        [DataRow("", "Файл пустой.")]
+        [DataRow("Имя,Возраст\nАндрей", "Данные в строке 2 отсутствуют или заполнены не полностью.")]
+        public void TLoadFromCsvWithErrors(string csvFile, string expected)
+        {
+            // init
+            string filePath = "data.csv";
+            File.WriteAllText(filePath, csvFile, Encoding.UTF8);
+            CsvLoader csvLoader = new CsvLoader();
+
+            // actual
+            string actual = csvLoader.LoadFromCsv(filePath);
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+    }
 }
