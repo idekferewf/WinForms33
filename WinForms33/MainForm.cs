@@ -127,7 +127,9 @@ namespace WinForms33
                 string filePath = saveHtmlFileDialog.FileName;
 
                 // сохраняем файл
-                string errors = csv.SaveToHtml(filePath);
+                string themeName = GetThemeName();
+                string fontName = GetFontName();
+                string errors = csv.SaveToHtml(filePath, fontName, themeName);
 
                 if (string.IsNullOrWhiteSpace(errors))
                 {
@@ -145,6 +147,16 @@ namespace WinForms33
         private void hideErrorsButton_Click(object sender, EventArgs e)
         {
             errorsPanel.Visible = false;
+        }
+
+        private string GetThemeName()
+        {
+            return themeGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+        }
+
+        private string GetFontName()
+        {
+            return fontGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
         }
     }
 }

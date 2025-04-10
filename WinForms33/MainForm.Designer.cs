@@ -39,21 +39,22 @@
             this.errorsPanel = new System.Windows.Forms.Panel();
             this.hideErrorsButton = new System.Windows.Forms.Button();
             this.toolsPanel = new System.Windows.Forms.Panel();
-            this.themeGroupBox = new System.Windows.Forms.GroupBox();
-            this.darkThemeRadioButton = new System.Windows.Forms.RadioButton();
-            this.lightThemeRadioButton = new System.Windows.Forms.RadioButton();
-            this.csvGridView = new System.Windows.Forms.DataGridView();
-            this.greenThemeRadioButton = new System.Windows.Forms.RadioButton();
             this.fontGroupBox = new System.Windows.Forms.GroupBox();
             this.TimesNewRomanFontRadioButton = new System.Windows.Forms.RadioButton();
             this.courierNewFontRadioButton = new System.Windows.Forms.RadioButton();
             this.arialFontRadioButton = new System.Windows.Forms.RadioButton();
+            this.themeGroupBox = new System.Windows.Forms.GroupBox();
+            this.greenThemeRadioButton = new System.Windows.Forms.RadioButton();
+            this.darkThemeRadioButton = new System.Windows.Forms.RadioButton();
+            this.lightThemeRadioButton = new System.Windows.Forms.RadioButton();
+            this.csvGridView = new System.Windows.Forms.DataGridView();
+            this.noThemeRadioButton = new System.Windows.Forms.RadioButton();
             this.mainMenuStrip.SuspendLayout();
             this.errorsPanel.SuspendLayout();
             this.toolsPanel.SuspendLayout();
+            this.fontGroupBox.SuspendLayout();
             this.themeGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csvGridView)).BeginInit();
-            this.fontGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenuStrip
@@ -152,6 +153,7 @@
             // 
             // toolsPanel
             // 
+            this.toolsPanel.Controls.Add(this.noThemeRadioButton);
             this.toolsPanel.Controls.Add(this.fontGroupBox);
             this.toolsPanel.Controls.Add(this.themeGroupBox);
             this.toolsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -160,63 +162,6 @@
             this.toolsPanel.Size = new System.Drawing.Size(644, 68);
             this.toolsPanel.TabIndex = 5;
             // 
-            // themeGroupBox
-            // 
-            this.themeGroupBox.Controls.Add(this.greenThemeRadioButton);
-            this.themeGroupBox.Controls.Add(this.darkThemeRadioButton);
-            this.themeGroupBox.Controls.Add(this.lightThemeRadioButton);
-            this.themeGroupBox.Location = new System.Drawing.Point(8, 7);
-            this.themeGroupBox.Name = "themeGroupBox";
-            this.themeGroupBox.Size = new System.Drawing.Size(319, 55);
-            this.themeGroupBox.TabIndex = 0;
-            this.themeGroupBox.TabStop = false;
-            this.themeGroupBox.Text = "Выберите тему";
-            // 
-            // darkThemeRadioButton
-            // 
-            this.darkThemeRadioButton.AutoSize = true;
-            this.darkThemeRadioButton.Location = new System.Drawing.Point(110, 23);
-            this.darkThemeRadioButton.Name = "darkThemeRadioButton";
-            this.darkThemeRadioButton.Size = new System.Drawing.Size(92, 17);
-            this.darkThemeRadioButton.TabIndex = 1;
-            this.darkThemeRadioButton.TabStop = true;
-            this.darkThemeRadioButton.Text = "Тёмная тема";
-            this.darkThemeRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // lightThemeRadioButton
-            // 
-            this.lightThemeRadioButton.AutoSize = true;
-            this.lightThemeRadioButton.Checked = true;
-            this.lightThemeRadioButton.Location = new System.Drawing.Point(9, 23);
-            this.lightThemeRadioButton.Name = "lightThemeRadioButton";
-            this.lightThemeRadioButton.Size = new System.Drawing.Size(95, 17);
-            this.lightThemeRadioButton.TabIndex = 0;
-            this.lightThemeRadioButton.TabStop = true;
-            this.lightThemeRadioButton.Text = "Светлая тема";
-            this.lightThemeRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // csvGridView
-            // 
-            this.csvGridView.AllowUserToAddRows = false;
-            this.csvGridView.AllowUserToDeleteRows = false;
-            this.csvGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.csvGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.csvGridView.Location = new System.Drawing.Point(0, 24);
-            this.csvGridView.Name = "csvGridView";
-            this.csvGridView.Size = new System.Drawing.Size(644, 279);
-            this.csvGridView.TabIndex = 0;
-            // 
-            // greenThemeRadioButton
-            // 
-            this.greenThemeRadioButton.AutoSize = true;
-            this.greenThemeRadioButton.Location = new System.Drawing.Point(208, 23);
-            this.greenThemeRadioButton.Name = "greenThemeRadioButton";
-            this.greenThemeRadioButton.Size = new System.Drawing.Size(96, 17);
-            this.greenThemeRadioButton.TabIndex = 2;
-            this.greenThemeRadioButton.TabStop = true;
-            this.greenThemeRadioButton.Text = "Зелёная тема";
-            this.greenThemeRadioButton.UseVisualStyleBackColor = true;
-            // 
             // fontGroupBox
             // 
             this.fontGroupBox.Controls.Add(this.TimesNewRomanFontRadioButton);
@@ -224,7 +169,7 @@
             this.fontGroupBox.Controls.Add(this.arialFontRadioButton);
             this.fontGroupBox.Location = new System.Drawing.Point(333, 7);
             this.fontGroupBox.Name = "fontGroupBox";
-            this.fontGroupBox.Size = new System.Drawing.Size(278, 55);
+            this.fontGroupBox.Size = new System.Drawing.Size(282, 55);
             this.fontGroupBox.TabIndex = 3;
             this.fontGroupBox.TabStop = false;
             this.fontGroupBox.Text = "Выберите шрифт";
@@ -263,6 +208,74 @@
             this.arialFontRadioButton.Text = "Arial";
             this.arialFontRadioButton.UseVisualStyleBackColor = true;
             // 
+            // themeGroupBox
+            // 
+            this.themeGroupBox.Controls.Add(this.greenThemeRadioButton);
+            this.themeGroupBox.Controls.Add(this.darkThemeRadioButton);
+            this.themeGroupBox.Controls.Add(this.lightThemeRadioButton);
+            this.themeGroupBox.Location = new System.Drawing.Point(8, 7);
+            this.themeGroupBox.Name = "themeGroupBox";
+            this.themeGroupBox.Size = new System.Drawing.Size(319, 55);
+            this.themeGroupBox.TabIndex = 0;
+            this.themeGroupBox.TabStop = false;
+            this.themeGroupBox.Text = "Выберите тему";
+            // 
+            // greenThemeRadioButton
+            // 
+            this.greenThemeRadioButton.AutoSize = true;
+            this.greenThemeRadioButton.Location = new System.Drawing.Point(152, 23);
+            this.greenThemeRadioButton.Name = "greenThemeRadioButton";
+            this.greenThemeRadioButton.Size = new System.Drawing.Size(68, 17);
+            this.greenThemeRadioButton.TabIndex = 2;
+            this.greenThemeRadioButton.TabStop = true;
+            this.greenThemeRadioButton.Text = "Зелёная";
+            this.greenThemeRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // darkThemeRadioButton
+            // 
+            this.darkThemeRadioButton.AutoSize = true;
+            this.darkThemeRadioButton.Location = new System.Drawing.Point(82, 23);
+            this.darkThemeRadioButton.Name = "darkThemeRadioButton";
+            this.darkThemeRadioButton.Size = new System.Drawing.Size(64, 17);
+            this.darkThemeRadioButton.TabIndex = 1;
+            this.darkThemeRadioButton.TabStop = true;
+            this.darkThemeRadioButton.Text = "Тёмная";
+            this.darkThemeRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // lightThemeRadioButton
+            // 
+            this.lightThemeRadioButton.AutoSize = true;
+            this.lightThemeRadioButton.Checked = true;
+            this.lightThemeRadioButton.Location = new System.Drawing.Point(9, 23);
+            this.lightThemeRadioButton.Name = "lightThemeRadioButton";
+            this.lightThemeRadioButton.Size = new System.Drawing.Size(67, 17);
+            this.lightThemeRadioButton.TabIndex = 0;
+            this.lightThemeRadioButton.TabStop = true;
+            this.lightThemeRadioButton.Text = "Светлая";
+            this.lightThemeRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // csvGridView
+            // 
+            this.csvGridView.AllowUserToAddRows = false;
+            this.csvGridView.AllowUserToDeleteRows = false;
+            this.csvGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.csvGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.csvGridView.Location = new System.Drawing.Point(0, 24);
+            this.csvGridView.Name = "csvGridView";
+            this.csvGridView.Size = new System.Drawing.Size(644, 279);
+            this.csvGridView.TabIndex = 0;
+            // 
+            // noThemeRadioButton
+            // 
+            this.noThemeRadioButton.AutoSize = true;
+            this.noThemeRadioButton.Location = new System.Drawing.Point(234, 30);
+            this.noThemeRadioButton.Name = "noThemeRadioButton";
+            this.noThemeRadioButton.Size = new System.Drawing.Size(74, 17);
+            this.noThemeRadioButton.TabIndex = 3;
+            this.noThemeRadioButton.TabStop = true;
+            this.noThemeRadioButton.Text = "Без темы";
+            this.noThemeRadioButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,11 +294,12 @@
             this.errorsPanel.ResumeLayout(false);
             this.errorsPanel.PerformLayout();
             this.toolsPanel.ResumeLayout(false);
+            this.toolsPanel.PerformLayout();
+            this.fontGroupBox.ResumeLayout(false);
+            this.fontGroupBox.PerformLayout();
             this.themeGroupBox.ResumeLayout(false);
             this.themeGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csvGridView)).EndInit();
-            this.fontGroupBox.ResumeLayout(false);
-            this.fontGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,6 +327,7 @@
         private System.Windows.Forms.RadioButton courierNewFontRadioButton;
         private System.Windows.Forms.RadioButton arialFontRadioButton;
         private System.Windows.Forms.RadioButton greenThemeRadioButton;
+        private System.Windows.Forms.RadioButton noThemeRadioButton;
     }
 }
 

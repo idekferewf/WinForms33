@@ -13,7 +13,7 @@ namespace MyLib
             data_ = data;
         }
 
-        public string SaveToHtml(string outputPath)
+        public string SaveToHtml(string outputPath, string font, string theme)
         {
             // проверяем на существование данных
             if (data_ == null || data_.Count < 2)
@@ -22,7 +22,14 @@ namespace MyLib
             }
 
             // начало html
-            string html = "<!DOCTYPE html><html><head><title>CSVData</title></head><body><table>";
+            string tableStyle = ThemeManager.GetTableStyle(theme);
+            string fontStyle = $"font-family:{font}";
+            string html =
+                "<html><head>" +
+                "<title>CSVData</title>" +
+                "<meta name='viewport' content='width=device-width, initial-scale=1.0'/>" +
+                $"<style>{tableStyle}</style></head><body>" +
+                $"<div class='table-wrapper'><table style='{fontStyle}'>";
 
             // добавляем заголовки
             html += "<thead><tr>";
@@ -46,7 +53,7 @@ namespace MyLib
             html += "</tbody>";
 
             // конец html
-            html += "</table></tbody></html>";
+            html += "</table></div></body></html>";
 
             // сохраняем файл
             try
