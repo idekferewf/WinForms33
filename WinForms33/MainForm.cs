@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using MyLib;
 
@@ -9,6 +11,7 @@ namespace WinForms33
     public partial class MainForm: Form
     {
         public List<List<string>> csvData;
+        private bool isPreview_ = false;
 
         public MainForm()
         {
@@ -116,20 +119,13 @@ namespace WinForms33
 
         private void convertToHtmlToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // получаем данные из таблицы
-            List<List<string>> resultData = GetCsvGridView();
-
-            // сохраняем данные
-            CsvToHtml csv = new CsvToHtml(resultData);
             if (saveHtmlFileDialog.ShowDialog() == DialogResult.OK)
             {
                 // получаем путь до сохранения
                 string filePath = saveHtmlFileDialog.FileName;
 
                 // сохраняем файл
-                string themeName = GetThemeName();
-                string fontName = GetFontName();
-                string errors = csv.SaveToHtml(filePath, fontName, themeName);
+                string errors = ConvertToHtml(filePath);
 
                 if (string.IsNullOrWhiteSpace(errors))
                 {
@@ -142,6 +138,22 @@ namespace WinForms33
                     errorsTextBox.Text = errors;
                 }
             }
+        }
+
+        private string ConvertToHtml(string filePath)
+        {
+            // получаем данные из таблицы
+            List<List<string>> resultData = GetCsvGridView();
+
+            // сохраняем данные
+            CsvToHtml csv = new CsvToHtml(resultData);
+
+            // сохраняем файл
+            string themeName = GetThemeName();
+            string fontName = GetFontName();
+            string errors = csv.SaveToHtml(filePath, fontName, themeName);
+
+            return errors;
         }
 
         private void hideErrorsButton_Click(object sender, EventArgs e)
@@ -157,6 +169,46 @@ namespace WinForms33
         private string GetFontName()
         {
             return fontGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+        }
+
+        private void previewButton_Click(object sender, EventArgs e)
+        {
+            if (isPreview_)
+            {
+                // скрываем предпросмотр
+                isPreview_ = false;
+                previewWebBrowser.Visible = false;
+
+                // меняем текст кнопки для показа предпросмотра
+                previewButton.Text = "Предпросмотр";
+
+                return;
+            }
+
+            // получаем путь до сохранения
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "data.html");
+
+            // сохраняем данные
+            string errors = ConvertToHtml(filePath);
+
+            if (string.IsNullOrWhiteSpace(errors))
+            {
+                // получаем uri для отображения
+                string fileUri = "file://" + filePath.Replace("\\", "/");
+
+                // показываем предпросмотр
+                isPreview_ = true;
+                previewWebBrowser.Visible = true;
+                previewWebBrowser.Navigate(fileUri);
+
+                // меняем текст кнопки для скрытия предпросмотра
+                previewButton.Text = "Скрыть предпросмотр";
+            }
+            else
+            {
+                errorsPanel.Visible = true;
+                errorsTextBox.Text = errors;
+            }
         }
     }
 }
