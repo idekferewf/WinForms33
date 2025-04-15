@@ -11,7 +11,6 @@ namespace WinForms33
     public partial class MainForm: Form
     {
         public List<List<string>> csvData;
-        private bool isPreview_ = false;
 
         public MainForm()
         {
@@ -125,7 +124,7 @@ namespace WinForms33
                 string filePath = saveHtmlFileDialog.FileName;
 
                 // сохраняем файл
-                string errors = ConvertToHtml(filePath);
+                string errors = SaveToHtmlFile(filePath);
 
                 if (string.IsNullOrWhiteSpace(errors))
                 {
@@ -140,7 +139,7 @@ namespace WinForms33
             }
         }
 
-        private string ConvertToHtml(string filePath)
+        private string SaveToHtmlFile(string filePath)
         {
             // получаем данные из таблицы
             List<List<string>> resultData = GetCsvGridView();
@@ -173,10 +172,9 @@ namespace WinForms33
 
         private void previewButton_Click(object sender, EventArgs e)
         {
-            if (isPreview_)
+            if (previewWebBrowser.Visible)
             {
                 // скрываем предпросмотр
-                isPreview_ = false;
                 previewWebBrowser.Visible = false;
 
                 // меняем текст кнопки для показа предпросмотра
@@ -189,7 +187,7 @@ namespace WinForms33
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "data.html");
 
             // сохраняем данные
-            string errors = ConvertToHtml(filePath);
+            string errors = SaveToHtmlFile(filePath);
 
             if (string.IsNullOrWhiteSpace(errors))
             {
@@ -197,7 +195,6 @@ namespace WinForms33
                 string fileUri = "file://" + filePath.Replace("\\", "/");
 
                 // показываем предпросмотр
-                isPreview_ = true;
                 previewWebBrowser.Visible = true;
                 previewWebBrowser.Navigate(fileUri);
 

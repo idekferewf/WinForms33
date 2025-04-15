@@ -40,13 +40,13 @@
             this.hideErrorsButton = new System.Windows.Forms.Button();
             this.toolsPanel = new System.Windows.Forms.Panel();
             this.previewButton = new System.Windows.Forms.Button();
-            this.noThemeRadioButton = new System.Windows.Forms.RadioButton();
             this.fontGroupBox = new System.Windows.Forms.GroupBox();
             this.TimesNewRomanFontRadioButton = new System.Windows.Forms.RadioButton();
             this.courierNewFontRadioButton = new System.Windows.Forms.RadioButton();
             this.arialFontRadioButton = new System.Windows.Forms.RadioButton();
             this.themeGroupBox = new System.Windows.Forms.GroupBox();
             this.greenThemeRadioButton = new System.Windows.Forms.RadioButton();
+            this.noThemeRadioButton = new System.Windows.Forms.RadioButton();
             this.darkThemeRadioButton = new System.Windows.Forms.RadioButton();
             this.lightThemeRadioButton = new System.Windows.Forms.RadioButton();
             this.csvGridView = new System.Windows.Forms.DataGridView();
@@ -175,17 +175,6 @@
             this.previewButton.UseVisualStyleBackColor = true;
             this.previewButton.Click += new System.EventHandler(this.previewButton_Click);
             // 
-            // noThemeRadioButton
-            // 
-            this.noThemeRadioButton.AutoSize = true;
-            this.noThemeRadioButton.Location = new System.Drawing.Point(226, 23);
-            this.noThemeRadioButton.Name = "noThemeRadioButton";
-            this.noThemeRadioButton.Size = new System.Drawing.Size(74, 17);
-            this.noThemeRadioButton.TabIndex = 3;
-            this.noThemeRadioButton.TabStop = true;
-            this.noThemeRadioButton.Text = "Без темы";
-            this.noThemeRadioButton.UseVisualStyleBackColor = true;
-            // 
             // fontGroupBox
             // 
             this.fontGroupBox.Controls.Add(this.TimesNewRomanFontRadioButton);
@@ -255,6 +244,17 @@
             this.greenThemeRadioButton.TabStop = true;
             this.greenThemeRadioButton.Text = "Зелёная";
             this.greenThemeRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // noThemeRadioButton
+            // 
+            this.noThemeRadioButton.AutoSize = true;
+            this.noThemeRadioButton.Location = new System.Drawing.Point(226, 23);
+            this.noThemeRadioButton.Name = "noThemeRadioButton";
+            this.noThemeRadioButton.Size = new System.Drawing.Size(74, 17);
+            this.noThemeRadioButton.TabIndex = 3;
+            this.noThemeRadioButton.TabStop = true;
+            this.noThemeRadioButton.Text = "Без темы";
+            this.noThemeRadioButton.UseVisualStyleBackColor = true;
             // 
             // darkThemeRadioButton
             // 
