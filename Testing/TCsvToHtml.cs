@@ -24,7 +24,7 @@ namespace Testing
             };
 
             CsvToHtml csv = new CsvToHtml(data);
-            string errors = csv.SaveToHtml(outputPath, "Arial", "Без темы");
+            string errors = csv.SaveToHtml(outputPath, "Arial", "Тёмная");
 
             // assert (is saved)
             Assert.IsTrue(string.IsNullOrWhiteSpace(errors));
@@ -35,7 +35,7 @@ namespace Testing
             // expected
             string expected = "<html><head>" +
                 "<title>CSVData</title>" +
-                "<meta name='viewport' content='width=device-width, initial-scale=1.0'/><style></style></head>" +
+                "<meta name='viewport' content='width=device-width, initial-scale=1.0'/><style>body,table{color:#e0e0e0}*{margin:0;padding:0}body{background-color:#121212;margin:25px}.table-wrapper{border-radius:8px;display:block;border-radius:8px;overflow-x:auto;box-shadow:0 4px 8px rgba(0,0,0,.2)}table{width:100%;border-collapse:collapse;}thead{background-color:#333;border-bottom:1px solid #555}th{padding:14px 16px;text-align:left;font-weight:500;letter-spacing:.5px;text-transform:uppercase}tbody{background-color:#222}td{padding:12px 16px;border-bottom:1px solid #444}tbody tr:nth-child(2n){background-color:#282828}tbody tr:hover{background-color:#3a3a3a;transition:background-color .2s}tbody tr:first-child td{border-top:1px solid #444}tbody tr:last-child td{border-bottom:none}th:hover{background-color:#444;cursor:pointer}@media(max-width:768px){body{margin:20px}}@media(max-width:480px){body{margin:15px}}</style></head>" +
                 "<body><div class='table-wrapper'><table style='font-family:Arial'><thead>" +
                 "<tr><th>Имя</th><th>Возраст</th></tr>" +
                 "</thead><tbody>" +
