@@ -58,13 +58,13 @@ namespace MyLib
                 // валидация данных
                 else if (row.Count != headerLength)
                 {
-                    return $"Данные в строке {i + 1} отсутствуют или заполнены не полностью.";
+                    return $"Данные в строке {i + 1} отсутствуют, заполнены не полностью или больше, чем требуется.";
                 }
 
                 csvData.Add(row);
             }
 
-            if (lines.Length < 2)
+            if (csvData.Count == 0 || csvData.Skip(1).ToList().Count == 0)
             {
                 return "Данные отсутствуют.";
             }
